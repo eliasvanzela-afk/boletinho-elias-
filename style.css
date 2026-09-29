@@ -1,0 +1,163 @@
+/* ===== Reset básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Variáveis de cor ===== */
+:root {
+  --roxo: #6a4c93;          /* cor principal */
+  --lilas: #ede7f6;         /* cor secundária (fundo suave) */
+  --lilas-borda: #d1c4e9;   /* borda lilás */
+  --texto: #2d2d2d;
+  --branco: #ffffff;
+  --cinza-suave: #666;
+}
+
+/* ===== Corpo da página ===== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--branco);
+  color: var(--texto);
+  line-height: 1.5;
+  padding: 0 0 40px 0;
+}
+
+/* ===== Cabeçalho ===== */
+.cabecalho {
+  background-color: var(--roxo);
+  color: var(--branco);
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.cabecalho h1 {
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+.subtitulo {
+  margin-top: 6px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ===== Conteúdo principal ===== */
+.conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* ===== Área dos cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.card {
+  background-color: var(--branco);
+  border: 1px solid var(--lilas-borda);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(106, 76, 147, 0.12);
+  transition: transform 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  font-size: 0.85rem;
+  color: var(--roxo);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--texto);
+}
+
+.card p.aviso {
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--cinza-suave);
+}
+
+/* ===== Tabela ===== */
+.tabela-area h2 {
+  font-size: 1.3rem;
+  color: var(--roxo);
+  margin-bottom: 12px;
+}
+
+.tabela-responsiva {
+  overflow-x: auto; /* permite rolar no celular */
+  border-radius: 12px;
+  border: 1px solid var(--lilas-borda);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; /* garante que a tabela não "achate" no celular */
+}
+
+thead {
+  background-color: var(--roxo);
+  color: var(--branco);
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--lilas-borda);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--lilas);
+}
+
+tbody tr:hover {
+  background-color: #e1d5f0;
+}
+
+/* ===== Situações (cores de destaque) ===== */
+.situacao-bom {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.situacao-atencao {
+  color: #c62828;
+  font-weight: bold;
+}
+
+.situacao-sem-nota {
+  color: var(--cinza-suave);
+  font-style: italic;
+}
+
+/* ===== Ajustes para telas pequenas ===== */
+@media (max-width: 480px) {
+  .cabecalho h1 {
+    font-size: 1.4rem;
+  }
+
+  .card p {
+    font-size: 1.2rem;
+  }
+
+  th, td {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
